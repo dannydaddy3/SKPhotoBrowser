@@ -18,9 +18,9 @@ class SKButton: UIButton {
 
 
         return UI_USER_INTERFACE_IDIOM() == .phone
-            ?  UIEdgeInsets(top: 15.25, left: 15.25, bottom: 15.25, right: 15.25) : UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+            ?  UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) : UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
-    var size: CGSize = CGSize(width: 44, height: 44)
+    var size: CGSize = CGSize(width: 55, height: 55)
     var margin: CGFloat = 5
     
     var buttonTopOffset: CGFloat { return 5 }
@@ -56,8 +56,8 @@ class SKCloseButton: SKButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup(imageName)
-        showFrame = CGRect(x: margin, y: buttonTopOffset, width: size.width, height: size.height)
-        hideFrame = CGRect(x: margin, y: -20, width: size.width, height: size.height)
+        showFrame = CGRect(x: SKMesurement.screenWidth / 2 - 25, y: SKMesurement.screenHeight - 66.0, width: 55.0, height: 55.0)
+        hideFrame = CGRect(x: SKMesurement.screenWidth / 2 - 25, y: SKMesurement.screenHeight + 66.0, width: 55, height: 55)
     }
     
     override func updateFrame() {
